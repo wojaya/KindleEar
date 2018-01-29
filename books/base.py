@@ -1100,7 +1100,7 @@ class BaseFeedBook:
             qrimg = StringIO()
             img.save(qrimg, 'JPEG')
         
-        return None
+        return (qrimgName, qrimg.getvalue()) if qrimg else None
     
     #生成保存内容或分享文章链接的KindleEar调用链接
     def MakeShareLink(self, sharetype, user, url, soup):
